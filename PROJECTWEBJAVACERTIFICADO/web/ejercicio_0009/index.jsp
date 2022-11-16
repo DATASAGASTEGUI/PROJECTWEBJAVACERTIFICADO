@@ -4,6 +4,7 @@
     Author     : RYZEN
 --%>
 
+<%@page import="java.io.File"%>
 <%@page import="com.google.gson.reflect.TypeToken"%>
 <%@page import="com.google.gson.Gson"%>
 <%@page import="java.util.Map"%>
@@ -21,12 +22,14 @@
         <h1>9. HACER UN FORMULARIO PARA BUSCAR EL SIGNIFICADO DE UNA PALABRA EN INGLES-ESPAÑOL USANDO UN DICCIONARIO - JSON</h1>
 
         <%!
-            public String diccionario(String ingles) {
+            public String diccionario(String ingles,String nra) {
                 String espaniol = "";
                 String cadenajson = "";
 
-                String nra = "C:/Users/RYZEN/Documents/NetbeansProjects7/PROYECTOWEBMANANA/PROJECTWEBJAVACERTIFICADO/web/ejercicio_0009/diccionario.json";
-                
+                //String nra = "C:/Users/RYZEN/Documents/NetbeansProjects7/PROYECTOWEBMANANA/PROJECTWEBJAVACERTIFICADO/web/ejercicio_0009/diccionario.json";
+                                
+
+
                 try {
                     cadenajson = new String(Files.readAllBytes(Paths.get(nra))); //read byte data from the Sample.json file and convert it into String 
 
@@ -43,11 +46,12 @@
         %>
 
         <%
+            String nra = new File(application.getRealPath("/ejercicio_0009/data/diccionario.json")).toString();
             String ingles = "";
             String espaniol = "";
             if (request.getParameter("cmdBuscar") != null) {
                 ingles = request.getParameter("txtIngles").toLowerCase();
-                espaniol = diccionario(ingles);
+                espaniol = diccionario(ingles,nra);
                 if (espaniol == null) {
                     espaniol = "NO ENCONTRADO";
                 }
