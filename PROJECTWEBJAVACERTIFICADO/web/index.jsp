@@ -23,6 +23,9 @@
         <a href='ejercicio_0008/index.jsp'>8.</a> HACER UN FORMULARIO PARA BUSCAR EL SIGNIFICADO DE UNA PALABRA EN INGLES-ESPAÑOL USANDO UN DICCIONARIO - HASHMAP<br>
         <a href='ejercicio_0009/index.jsp'>9.</a> HACER UN FORMULARIO PARA BUSCAR EL SIGNIFICADO DE UNA PALABRA EN INGLES-ESPAÑOL USANDO UN DICCIONARIO - JSON<br>
         <a href='ejercicio_0010/index.jsp'>10.</a> HACER UN FORMULARIO QUE PIDA UN NÚMERO N Y SE MOSTRARA LA TABLA DE MULTIPLICAR DE N<br>
-         <a href='ejercicio_0011/index.jsp'>11.</a> LEER UNA TABLA SQL Y MOSTRARLA EN UNA PAGINA QUE INCLUYA UNA FOTO<br>
+        <a href='ejercicio_0011/mostrar.jsp'>11.</a> LEER UNA TABLA SQL Y MOSTRARLA EN UNA PAGINA QUE INCLUYA UNA FOTO<br>
+        <a href='ejercicio_0011/buscar.jsp'>12.</a> BUSCAR EN UNA TABLA SQL UN ALUMNO Y MOSTRARLA EN UNA PAGINA QUE INCLUYA UNA FOTO<br>
+        <a href='ejercicio_0011/eliminar_actualizar.jsp'>13.</a> ELIMINAR Y ACTUALIZAR UN ALUMNO<br>
+
     </body>
 </html>

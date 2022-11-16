@@ -19,6 +19,15 @@ public class Alumno {
         this.foto = foto;
     }
 
+    public Alumno(String codigo, String nombre, int edad, double estatura) {
+        this.codigo = codigo;
+        this.nombre = nombre;
+        this.edad = edad;
+        this.estatura = estatura;
+    }
+    
+    
+
     public String getCodigo() {
         return codigo;
     }
