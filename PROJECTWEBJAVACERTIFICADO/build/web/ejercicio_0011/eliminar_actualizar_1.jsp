@@ -43,25 +43,29 @@
         <%-- ACCION BOTON ELIMINAR --%>
         <%
             boolean eliminarMensaje1 = false;
-            boolean eliminarMensaje2 = false;
             if (request.getParameter("cmdEliminar") != null) {
                 String codigo = request.getParameter("txtCodigo");
                 boolean eliminar = crud.eliminarAlumno(codigo);
+                eliminarMensaje1 = true;
             }
         %>
 
         <%-- ACCION BOTON ACTUALIZAR --%>
         <%
             boolean actualizarMensaje1 = false;
-            boolean actualizarMensaje2 = false;
-            boolean actualizarMensaje3 = false;
             if (request.getParameter("cmdActualizar") != null) {
-                String codigo = request.getParameter("txtCodigo");
-                String nombre = request.getParameter("txtNombre");
-                String edad = request.getParameter("txtEdad");
-                String estatura = request.getParameter("txtEstatura");
-                Alumno alumno = new Alumno(codigo, nombre, Integer.parseInt(edad), Double.parseDouble(estatura));
-                boolean actualizar = crud.actualizarAlumno(alumno);
+                try {
+                    String codigo = request.getParameter("txtCodigo");
+                    String nombre = request.getParameter("txtNombre");
+                    String edad = request.getParameter("txtEdad");
+                    String estatura = request.getParameter("txtEstatura");
+                    Alumno alumno = new Alumno(codigo, nombre, Integer.parseInt(edad), Double.parseDouble(estatura));
+                    boolean actualizar = crud.actualizarAlumno(alumno);
+                    actualizarMensaje1 = true;
+                    encontro = true;
+                } catch (Exception e) {
+
+                }
             }
         %>
 
@@ -115,9 +119,9 @@
             </table>
 
             <%
-                if (actualizarMensaje3 == true) {
+                if (actualizarMensaje1 == true) {
             %>       
-            <center><input style='width: 25%; text-align:center;' type='text' value='ERROR: ENTRADA INCORRECTA' disabled /></center>    
+            <center><input style='width: 25%; text-align:center;' type='text' value='OK: ACTUALIZAR' disabled /></center>    
 
             <%
                 }
@@ -133,7 +137,15 @@
     %>
 
 
-    
+    <%
+        if (eliminarMensaje1) {
+    %>
+    <center><input style='width: 25%; text-align:center;' type='text' value='OK: ELIMINAR' disabled /></center> 
+
+    <%
+        }
+
+    %>
 
 
 

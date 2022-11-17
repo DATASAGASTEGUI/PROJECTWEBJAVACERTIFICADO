@@ -26,6 +26,8 @@
         <a href='ejercicio_0011/mostrar.jsp'>11.</a> LEER UNA TABLA SQL Y MOSTRARLA EN UNA PAGINA QUE INCLUYA UNA FOTO<br>
         <a href='ejercicio_0011/buscar.jsp'>12.</a> BUSCAR EN UNA TABLA SQL UN ALUMNO Y MOSTRARLA EN UNA PAGINA QUE INCLUYA UNA FOTO<br>
         <a href='ejercicio_0011/eliminar_actualizar.jsp'>13.</a> ELIMINAR Y ACTUALIZAR UN ALUMNO<br>
-
+        <a href='ejercicio_0011/eliminar_actualizar_1.jsp'>13.</a> ELIMINAR Y ACTUALIZAR UN ALUMNO (SIMPLIFICADO)<br>
+        <a href='ejercicio_0011/ordenar_1.jsp'>14.</a> ORDENAR UN ARRAYLIST POR UN ATRIBUTO<br>
+        <a href='ejercicio_0012/index.jsp'>15.</a> MENU CON BOTON RADIO PARA LEVANTAR URL<br>
     </body>
 </html>

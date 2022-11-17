@@ -4,6 +4,8 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -14,6 +16,9 @@ public class OperacionesCrud {
 
     public OperacionesCrud(Connection conexion) {
         this.conexion = conexion;
+    }
+
+    public OperacionesCrud() {
     }
 
     public List<Alumno> getArrayListAlumnos() {
@@ -77,4 +82,33 @@ public class OperacionesCrud {
 
     }
 
+    //ORDENAR POR EL ATRIBUTO NOMBRE (ASCENDENTE)
+    public void ordenarArrayListPorNombre(List<Alumno> alumnos_al) {
+        Collections.sort(alumnos_al, new Comparator<Alumno>() {
+            @Override
+            public int compare(Alumno a1, Alumno a2) {
+                return a1.getNombre().compareTo(a2.getNombre());
+            }
+        });
+    }
+
+    //ORDENAR POR EL ATRIBUTO EDAD (ASCENDENTE)
+    public void ordenarArrayListPorEdad(List<Alumno> alumnos_al) {
+        Collections.sort(alumnos_al, new Comparator<Alumno>() {
+            @Override
+            public int compare(Alumno a1, Alumno a2) {
+                return String.valueOf(a1.getEdad()).compareTo(String.valueOf(a2.getEdad()));
+            }
+        });
+    }
+
+    //ORDENAR POR EL ATRIBUTO ESTATURA (ASCENDENTE)
+    public void ordenarArrayListPorEstatura(List<Alumno> alumnos_al) {
+        Collections.sort(alumnos_al, new Comparator<Alumno>() {
+            @Override
+            public int compare(Alumno a1, Alumno a2) {
+                return String.valueOf(a1.getEstatura()).compareTo(String.valueOf(a2.getEstatura()));
+            }
+        });
+    }
 }

@@ -33,10 +33,10 @@
 
         <h1>1. HACER UN FORMULARIO PARA SUMAR DOS NUMEROS</h1>
         <form action="">
-            <input type='text' name='txtN1' value='<%=n1%>' />
-            <input type='text' name='txtN2' value='<%=n2%>' />
-            <input type='text' name="txtR" value='<%=r%>' />
-            <input type='text' name="txtM" value='<%=m%>' />
+            <input type='text' name='txtN1' value='<%=n1%>' required />
+            <input type='text' name='txtN2' value='<%=n2%>' required />
+            <input type='text' name="txtR" value='<%=r%>' disabled />
+            <input type='text' name="txtM" value='<%=m%>' disabled />
             <input type='submit' value="SUMAR" name='cmdEnviar' />
 
         </form>  
