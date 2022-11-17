@@ -1,13 +1,14 @@
+<%@page import="java.util.HashMap"%>
+<%@page import="java.sql.Connection"%>
+<%@page import="_11.ConexionMysql"%>
 <%
     ConexionMysql cm = new ConexionMysql("colegio");
     Connection conexion = cm.getConexion();
 %>
 
-<%@page import="java.util.TreeMap"%>
 <%@page import="java.util.Set"%>
+<%@page import="java.util.TreeMap"%>
 <%@page import="_11.OperacionesCrud"%>
-<%@page import="java.sql.Connection"%>
-<%@page import="_11.ConexionMysql"%>
 <%@page import="java.util.Map"%>
 <%@page import="_11.Alumno"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -15,32 +16,43 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>BUSCAR</title>
+        <title>17</title>
     </head>
     <body>
-        <h1>12. BUSCAR EN UNA TABLA SQL UN ALUMNO Y MOSTRARLA EN UNA PAGINA QUE INCLUYA UNA FOTO</h1>
+        <h1>17.MOSTRAR LOS ALUMNOS USANDO UNA LISTA DE SELECCION MULTIPLE</h1>
 
         <%
-            String clave = "";
+            String[] claves_v;
             boolean encontro = false;
             Alumno a = null;
-            if (request.getParameter("cmdEnviar") != null) {
-                clave = request.getParameter("cboClaveAlumno");
+            if (request.getParameter("cmdSeleccionar") != null) {
+
+                claves_v = request.getParameterValues("lstClaveAlumno");
+
                 if (conexion != null) {
                     OperacionesCrud crud = new OperacionesCrud(conexion);
-                    Map<String, Alumno> alumnos_hm = crud.getHashMapAlumno();
-                    a = alumnos_hm.get(clave);
-                    encontro = true;
-                } else {
-                    System.out.println("ERROR: CONEXION");
+                    Map<String, Alumno> alumnos1_hm = crud.getHashMapAlumno();
+                    Map<String, Alumno> alumnos2_hm = new HashMap<>();
+
+                    Set<String> claves = alumnos1_hm.keySet();
+
+                    for (String k : claves_v) {
+                        Alumno alumno = alumnos1_hm.get(k);
+                        alumnos2_hm.put(k, alumno);
+                    }
                 }
+
+                encontro = true;
+            } else {
+                System.out.println("ERROR: CONEXION");
             }
+
         %>
+
 
     <center>
         <form action="">
-            <%
-                if (conexion != null) {
+            <%                if (conexion != null) {
                     OperacionesCrud crud = new OperacionesCrud(conexion);
                     Map<String, Alumno> alumnos_hm = crud.getHashMapAlumno();
 
@@ -48,7 +60,7 @@
 
                     Set<String> claves = alumnos_tm.keySet();
             %>
-            <select name="cboClaveAlumno" size="1"> 
+            <select name="lstClaveAlumno" size="1"> 
                 <%
                     for (String s : claves) {
                 %>        
@@ -57,7 +69,7 @@
                     }
                 %>
             </select>
-            <input type='submit' name='cmdEnviar' value='ENVIAR' />
+            <input type='submit' name='cmdSeleccionar' value='Seleccionar' />
             <%
             } else {
             %>
@@ -69,8 +81,7 @@
     </center>
 
     <br><br>
-
-
+    
     <%
         if (encontro == true) {
             String ruta = request.getContextPath() + "/ejercicio_0011/foto/" + a.getFoto();
@@ -89,8 +100,6 @@
     <%
         }
     %>
-
-
 
 </body>
 </html>

@@ -29,5 +29,8 @@
         <a href='ejercicio_0011/eliminar_actualizar_1.jsp'>13.</a> ELIMINAR Y ACTUALIZAR UN ALUMNO (SIMPLIFICADO)<br>
         <a href='ejercicio_0011/ordenar_1.jsp'>14.</a> ORDENAR UN ARRAYLIST POR UN ATRIBUTO<br>
         <a href='ejercicio_0012/index.jsp'>15.</a> MENU CON BOTON RADIO PARA LEVANTAR URL<br>
+        <a href='ejercicio_0013/index.jsp'>16.</a> RESUMEN DE COMPONENTES O CONTROLES HTML PARA UN FORMULARIO<br>
+        <a href='ejercicio_0011/mostrar_lista_seleccion_multiple.jsp'>17.</a> MOSTRAR LOS ALUMNOS USANDO UNA LISTA DE SELECCION MULTIPLE<br>
+
     </body>
 </html>
