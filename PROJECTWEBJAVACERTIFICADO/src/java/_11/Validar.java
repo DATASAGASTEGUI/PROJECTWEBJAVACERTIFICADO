@@ -13,4 +13,13 @@ public class Validar {
     public static boolean edad(String ne) {
         return ne.matches("[0-9]{2}");
     }
+
+    /*
+    public static boolean codigo(String c) {
+        return c.matches("A[0-9]{2}");
+    }*/
+    
+    public static boolean foto(String f) {
+        return f.matches("[0-9]{2}\\.png");
+    }
 }

@@ -31,6 +31,10 @@
         <a href='ejercicio_0012/index.jsp'>15.</a> MENU CON BOTON RADIO PARA LEVANTAR URL<br>
         <a href='ejercicio_0013/index.jsp'>16.</a> RESUMEN DE COMPONENTES O CONTROLES HTML PARA UN FORMULARIO<br>
         <a href='ejercicio_0011/mostrar_lista_seleccion_multiple.jsp'>17.</a> MOSTRAR LOS ALUMNOS USANDO UNA LISTA DE SELECCION MULTIPLE<br>
-
+        <a href='ejercicio_0011/insertar.jsp'>18.</a> INSERTAR UN ALUMNO<br>
+        <a href='ejercicio_0011/insertar_1.jsp'>19.</a> INSERTAR UN ALUMNO EL CODIGO SE GENERA<br>
+        <a href='ejercicio_0014/index.jsp'>20.</a> MOSTRAR EL NÚMERO DE AÑOS, MESES Y DIAS A PARTIR DE UNA FECHA DE NACIMIENTO<br>
+        <a href='ejercicio_0011/mostrar_checkbox.jsp'>21.</a> MOSTRAR LOS ALUMNOS USANDO UN CHECKBOX<br>
+    
     </body>
 </html>

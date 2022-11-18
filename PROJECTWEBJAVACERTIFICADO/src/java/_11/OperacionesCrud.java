@@ -60,7 +60,6 @@ public class OperacionesCrud {
             ps.setString(1, codigo);
             ps.executeUpdate();
             return true;
-
         } catch (Exception e) {
             return false;
         }
@@ -79,7 +78,75 @@ public class OperacionesCrud {
         } catch (Exception e) {
             return false;
         }
+    }
 
+    public boolean insertarAlumno(Alumno alumno) {
+        String query = "INSERT INTO Alumno(codigo,nombre,edad,estatura,foto) VALUES(?,?,?,?,?)";
+        try {
+            PreparedStatement ps = conexion.prepareStatement(query);
+            ps.setString(1, alumno.getCodigo());
+            ps.setString(2, alumno.getNombre());
+            ps.setInt(3, alumno.getEdad());
+            ps.setDouble(4, alumno.getEstatura());
+            ps.setString(5, alumno.getFoto());
+            ps.executeUpdate();
+            return true;
+        } catch (Exception e) {
+            return false;
+        }
+    }
+
+    public void insertarAlumno1(Alumno alumno) {
+        String query = "INSERT INTO Alumno(codigo,nombre,edad,estatura,foto) VALUES(?,?,?,?,?)";
+        try {
+            PreparedStatement ps = conexion.prepareStatement(query);
+            ps.setString(1, alumno.getCodigo());
+            ps.setString(2, alumno.getNombre());
+            ps.setInt(3, alumno.getEdad());
+            ps.setDouble(4, alumno.getEstatura());
+            ps.setString(5, alumno.getFoto());
+            ps.executeUpdate();
+
+        } catch (Exception e) {
+
+        }
+    }
+
+    public boolean existeAlumno(String idAlumno) {
+        boolean existe = false;
+        String query = "SELECT * FROM Alumno WHERE codigo = ?";
+        try {
+            PreparedStatement ps = conexion.prepareStatement(query);
+            ps.setString(1, idAlumno);
+            ResultSet rs = ps.executeQuery();
+            while (rs.next()) {
+                existe = true;
+            }
+
+        } catch (Exception e) {
+            existe = false;
+        }
+        return existe;
+    }
+
+    public String generarCodigo() {
+        String query = "SELECT codigo FROM Alumno ORDER by codigo DESC LIMIT 1";
+        String codigo = "";
+        int numero = 0;
+        try {
+            PreparedStatement ps = conexion.prepareStatement(query);
+            ResultSet rs = ps.executeQuery();
+            while (rs.next()) {
+                codigo = rs.getString(1); //A10
+            }
+
+            numero = Integer.parseInt(codigo.substring(1)) + 1; //11
+            System.out.println(numero);
+
+        } catch (Exception e) {
+
+        }
+        return "A" + numero; //A11
     }
 
     //ORDENAR POR EL ATRIBUTO NOMBRE (ASCENDENTE)

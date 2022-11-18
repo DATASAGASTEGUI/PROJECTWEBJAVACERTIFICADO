@@ -1,17 +1,19 @@
+<%@page import="java.util.Collection"%>
 <%@page import="java.util.HashMap"%>
 <%@page import="java.sql.Connection"%>
 <%@page import="_11.ConexionMysql"%>
-<%
-    ConexionMysql cm = new ConexionMysql("colegio");
-    Connection conexion = cm.getConexion();
-%>
-
 <%@page import="java.util.Set"%>
 <%@page import="java.util.TreeMap"%>
 <%@page import="_11.OperacionesCrud"%>
 <%@page import="java.util.Map"%>
 <%@page import="_11.Alumno"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+
+<%
+    ConexionMysql cm = new ConexionMysql("colegio");
+    Connection conexion = cm.getConexion();
+%>
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -24,7 +26,7 @@
         <%
             String[] claves_v;
             boolean encontro = false;
-            Alumno a = null;
+            Map<String, Alumno> alumnos2_hm = new HashMap<>();
             if (request.getParameter("cmdSeleccionar") != null) {
 
                 claves_v = request.getParameterValues("lstClaveAlumno");
@@ -32,7 +34,6 @@
                 if (conexion != null) {
                     OperacionesCrud crud = new OperacionesCrud(conexion);
                     Map<String, Alumno> alumnos1_hm = crud.getHashMapAlumno();
-                    Map<String, Alumno> alumnos2_hm = new HashMap<>();
 
                     Set<String> claves = alumnos1_hm.keySet();
 
@@ -60,7 +61,7 @@
 
                     Set<String> claves = alumnos_tm.keySet();
             %>
-            <select name="lstClaveAlumno" size="1"> 
+            <select name="lstClaveAlumno" multiple="true" size="5"> 
                 <%
                     for (String s : claves) {
                 %>        
@@ -81,11 +82,17 @@
     </center>
 
     <br><br>
-    
+
     <%
         if (encontro == true) {
-            String ruta = request.getContextPath() + "/ejercicio_0011/foto/" + a.getFoto();
+
+            Collection coleccion = alumnos2_hm.values();
+
+            for (Object o : coleccion) {
+                Alumno a = (Alumno) o;
+                String ruta = request.getContextPath() + "/ejercicio_0011/foto/" + a.getFoto();
     %> 
+
     <center>
         <table border='1'>
             <tr>
@@ -95,9 +102,12 @@
             <tr>
                 <td><%=a.getCodigo()%></td><td><%=a.getNombre()%></td><td><%=a.getEdad()%></td><td><%=a.getEstatura()%></td><td><img src='<%=ruta%>'></td>
             </tr>
+            
         </table>
     </center>
+
     <%
+            }
         }
     %>
 
