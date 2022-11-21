@@ -35,6 +35,7 @@
         <a href='ejercicio_0011/insertar_1.jsp'>19.</a> INSERTAR UN ALUMNO EL CODIGO SE GENERA<br>
         <a href='ejercicio_0014/index.jsp'>20.</a> MOSTRAR EL NÚMERO DE AÑOS, MESES Y DIAS A PARTIR DE UNA FECHA DE NACIMIENTO<br>
         <a href='ejercicio_0011/mostrar_checkbox.jsp'>21.</a> MOSTRAR LOS ALUMNOS USANDO UN CHECKBOX<br>
+        <a href='ejercicio_0015/index.jsp'>22.</a> MONGODB - MOSTRAR - BUSCAR<br>
     
     </body>
 </html>
