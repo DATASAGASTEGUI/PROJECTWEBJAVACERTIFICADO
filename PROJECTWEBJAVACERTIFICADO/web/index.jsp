@@ -36,6 +36,10 @@
         <a href='ejercicio_0014/index.jsp'>20.</a> MOSTRAR EL NÚMERO DE AÑOS, MESES Y DIAS A PARTIR DE UNA FECHA DE NACIMIENTO<br>
         <a href='ejercicio_0011/mostrar_checkbox.jsp'>21.</a> MOSTRAR LOS ALUMNOS USANDO UN CHECKBOX<br>
         <a href='ejercicio_0015/index.jsp'>22.</a> MONGODB - MOSTRAR - BUSCAR<br>
+        <a href='ejercicio_0016/index.jsp'>23.</a> CREAR MI PRIMER SERVLET<br>
+        <a href='ejercicio_0016/index1.jsp'>24.</a> JSP SOLICITAR A UN SERVLET UN CALCULO<br>
+        <a href='ejercicio_0016/index2.jsp'>25.</a> JSP SOLICITAR A UN SERVLET UN CALCULO (UNIFICAR BOTON SUMAR Y RESTAR)<br>
+        <a href='ejercicio_0016/index3.jsp'>26.</a> JSP SOLICITAR A UN SERVLET UN CALCULO RESPONDER AL MISMO JSP QUE HACE LA PETICION<br>
     
     </body>
 </html>

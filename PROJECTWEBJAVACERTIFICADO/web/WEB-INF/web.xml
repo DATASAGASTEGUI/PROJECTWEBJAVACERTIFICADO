@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="3.1" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd">
+    <servlet>
+        <servlet-name>PrimerServlet</servlet-name>
+        <servlet-class>_16.PrimerServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>Calcular</servlet-name>
+        <servlet-class>_16.Calcular</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>Calcular1</servlet-name>
+        <servlet-class>_16.Calcular1</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>CALCULAR2</servlet-name>
+        <servlet-class>_16.CALCULAR2</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>PrimerServlet</servlet-name>
+        <url-pattern>/PrimerServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Calcular</servlet-name>
+        <url-pattern>/Calcular</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Calcular1</servlet-name>
+        <url-pattern>/Calcular1</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>CALCULAR2</servlet-name>
+        <url-pattern>/CALCULAR2</url-pattern>
+    </servlet-mapping>
+    <session-config>
+        <session-timeout>
+            30
+        </session-timeout>
+    </session-config>
+</web-app>
